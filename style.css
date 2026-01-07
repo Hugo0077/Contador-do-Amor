@@ -131,23 +131,15 @@ button:hover {
     font-style: italic;
     display: none;
 }
-
+/*
 @media (max-width: 800px) {
+    .containerFotos {
+        width: 100%;
+        height: 400px;
+    }
+
     .content {
         flex-direction: column;
-        align-items: center;  /* Adicionando centralização no eixo horizontal */
-    }
-
-    .containerFotos {
-        width: 100%;  /* Certificando que a largura será 100% no celular */
-        height: 400px;
-        margin-bottom: 20px;  /* Adicionando espaço entre as imagens e outros elementos */
-    }
-
-    .containerRight {
-        width: 100%; /* Ajustando o conteúdo da direita para 100% no celular */
-        align-items: center;  /* Garantindo que os itens da coluna à direita fiquem centralizados */
-        justify-content: center;
     }
 
     h1 {
@@ -169,7 +161,6 @@ button:hover {
     .containerFotos {
         width: 100%;
         height: 300px;
-        margin-bottom: 10px;  /* Ajuste para dar mais espaço entre as imagens e outros elementos */
     }
 
     h1 {
@@ -184,6 +175,91 @@ button:hover {
     button {
         font-size: 14px;
         padding: 10px 15px;
+    }
+}
+*/
+/* Responsividade para telas pequenas */
+@media (max-width: 800px) {
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .containerFotos {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .slider {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+    }
+
+    .slide {
+        flex: 0 0 auto;
+        scroll-snap-align: start;
+        width: 90%;
+        margin: 5px;
+    }
+
+    .slide img {
+        width: 100%;
+        height: auto;
+    }
+
+    h1 {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    #contador {
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+}
+
+/* Responsividade para telas muito pequenas */
+@media (max-width: 500px) {
+    .content {
+        padding: 10px;
+    }
+
+    .containerFotos {
+        width: 100%;
+        height: auto;
+    }
+
+    .slider {
+        flex-direction: column;
+    }
+
+    .slide {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    #contador {
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 8px 12px;
     }
 }
 
